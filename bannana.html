@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍌 Kela's Portfolio | Existential Freelance Fruit 🍌</title>
+    
+    <!-- Load Tailwind CSS for easy, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'kela-yellow': '#fae134', /* Main Background */
+                        'kela-brown': '#5f450e', /* Text/Accent */
+                        'kela-neon': '#39ff14',  /* Highlight/CTA */
+                        'kela-ripe': '#ffaa00',  /* Ripe Orange Accent */
+                    },
+                    fontFamily: {
+                        'wacky': ['"Comic Sans MS"', 'cursive', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- 
+        ====================================================
+        Custom CSS for Kela's Vibe
+        ==================================================== 
+    -->
+    <style>
+        body {
+            background-color: #3473fa; 
+            font-family: 'inter', sans-serif; /* Using Inter for portfolio legibility */
+            min-height: 100vh;
+            color: lab(30.88% -8.13 -9.41 / 0.332);
+        }
+        
+        /* Keyframe for Kela's Anxious Wobble */
+        @keyframes kela-wobble {
+            0%, 100% { transform: rotate(0deg) scale(1.0); }
+            25% { transform: rotate(2deg) scale(1.05); }
+            75% { transform: rotate(-2deg) scale(1.05); }
+        }
+
+        .kela-emoji {
+            font-size: 10rem;
+            cursor: pointer;
+            transition: transform 0.1s ease-out;
+            animation: kela-wobble 2.5s infinite ease-in-out;
+        }
+
+        .kela-emoji:hover {
+            transform: scale(1.1);
+        }
+
+        /* Styling for the custom message box (Modal) */
+        #kela-quote-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 50;
+            transform: translate(-50%, -50%) scale(0.9);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease-in-out;
+            visibility: hidden;
+            opacity:0 ;
+            border: 6px solid #6eff14; /* Neon border for urgency */
+        }
+        
+        #kela-quote-box.active {
+            visibility: visible;
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Section dividers */
+        .section-heading {
+            font-family: 'wacky', 'inter';
+            font-size: 2.5rem;
+            text-shadow: 2px 2px #ffaa00;
+        }
+
+        /* Responsive grid for skills */
+        .skill-grid {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+        @media (min-width: 640px) {
+            .skill-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+    </style>
+</head>
+<body class="p-4 sm:p-8 flex flex-col items-center">
+
+    <!-- Header Section (Kela's Professional Brand) -->
+    <header class="w-full max-w-4xl bg-white p-6 rounded-xl shadow-2xl border-4 border-kela-brown text-center">
+        <h1 class="text-5xl sm:text-7xl font-extrabold text-kela-brown section-heading">
+            KELA: Freelance Fruit & Existential Consultant
+        </h1>
+        <p class="mt-4 text-xl text-kela-brown/70 font-inter font-semibold">
+            "I bring a unique curve to every problem."
+        </p>
+        
+        <div class="mt-6 flex justify-center items-center">
+            <!-- KELA EMOJI - The interactive element -->
+            <span id="kela-the-banana" class="kela-emoji block hover:text-kela-ripe transition-colors" title="Click Kela for a revelation!">🍌</span>
+        </div>
+        <p class="mt-4 text-sm text-kela-brown/50">
+            (Tap Kela to hear his latest philosophical musing.)
+        </p>
+    </header>
+
+    <!-- Main Content: Portfolio Sections -->
+    <main class="w-full max-w-4xl mt-12 space-y-12">
+        
+        <!-- About Kela Section -->
+        <section class="bg-white p-6 sm:p-10 rounded-xl shadow-xl border-4 border-kela-ripe">
+            <h2 class="text-kela-brown mb-6 section-heading">
+                About: Kela's Tragic/Professional Biography
+            </h2>
+            <p class="text-lg mb-4 font-inter">
+                Kela is a highly-motivated, potassium-rich asset with 2024 cycles of experience in fruit basket dynamics. While his colleagues (the apples) focus on shallow market gains, Kela specializes in **deep-dive existential dread**, offering clients unparalleled insight into the temporary nature of their success.
+            </p>
+            <p class="text-lg font-inter italic text-kela-brown/70">
+                Biggest weakness: He's afraid of being over-ripe, which he sees as "the inevitable slide into irrelevance and starch conversion."
+            </p>
+        </section>
+
+        <!-- Core Competencies / Skills Section -->
+        <section class="bg-kela-neon/20 p-6 sm:p-10 rounded-xl shadow-xl border-4 border-kela-neon">
+            <h2 class="text-kela-brown mb-8 section-heading">
+                Core Competencies & Skills
+            </h2>
+            <div class="grid skill-grid gap-6">
+                <!-- Skill Card 1 -->
+                <div class="p-4 bg-white rounded-lg shadow-md border-2 border-kela-brown">
+                    <h3 class="font-bold text-xl text-kela-brown">Advanced Photosynthesis</h3>
+                    <p class="text-sm mt-1">Self-starter in converting light energy into complex sugars. 100% organic workflow.</p>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="p-4 bg-white rounded-lg shadow-md border-2 border-kela-brown">
+                    <h3 class="font-bold text-xl text-kela-brown">Peel Integrity Management</h3>
+                    <p class="text-sm mt-1">Expert in maintaining structural integrity against gravity and clumsy human hands.</p>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="p-4 bg-white rounded-lg shadow-md border-2 border-kela-brown">
+                    <h3 class="font-bold text-xl text-kela-brown">Ethylene Gas Release (EGR)</h3>
+                    <p class="text-sm mt-1">Accelerated project management by proactively promoting ripeness in adjacent deliverables.</p>
+                </div>
+                <!-- Skill Card 4 -->
+                <div class="p-4 bg-white rounded-lg shadow-md border-2 border-kela-brown">
+                    <h3 class="font-bold text-xl text-kela-brown">Gravity Defiance (Minor)</h3>
+                    <p class="text-sm mt-1">Successfully resisted rolling off the counter on 3 documented occasions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="text-center p-10 rounded-xl bg-kela-brown text-white shadow-2xl">
+            <h2 class="section-heading text-kela-neon mb-6">
+                Ready to Hire Kela?
+            </h2>
+            <p class="text-lg mb-6 font-inter">
+                Kela is available for short-term projects, existential board meetings, and keynote speeches on the futility of growth.
+            </p>
+            <button onclick="showKelaQuote()" class="px-8 py-4 bg-kela-neon text-kela-brown font-extrabold text-2xl rounded-full hover:bg-white transition duration-300 transform hover:scale-105 shadow-lg">
+                Book a Consultation (A Peel-to-Peel Meeting) 📞
+            </button>
+            <p class="mt-4 text-sm text-kela-neon/80">
+                (Note: Clicking the button triggers more existential despair.)
+            </p>
+        </section>
+
+    </main>
+    
+    <!-- Footer Section -->
+    <footer class="mt-12 w-full max-w-4xl text-sm p-4 text-kela-brown/80 text-center border-t-2 border-kela-brown/30">
+        <p>A collaborative project by Kela and the existential void. &copy; 2025. Banana. (Do not confuse with plantain.)</p>
+    </footer>
+
+    <!-- Kela's Custom Quote Message Box (Modal) -->
+    <div id="kela-quote-box" class="fixed p-6 sm:p-8 bg-kela-brown rounded-2xl text-center max-w-xs sm:max-w-md">
+        <p id="kela-quote-text" class="text-white text-xl font-bold mb-4 font-inter"></p>
+        <button onclick="hideKelaQuote()" class="px-4 py-2 bg-kela-neon text-kela-brown rounded-lg font-bold hover:bg-kela-neon/70 transition duration-150 font-inter">
+            Peel & Accept This Truth
+        </button>
+    </div>
+
+    <!-- 
+        ====================================================
+        JAVASCRIPT (Kela's Wisdom)
+        ==================================================== 
+    -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const kelaBanana = document.getElementById('kela-the-banana');
+            const quoteBox = document.getElementById('kela-quote-box');
+            const quoteText = document.getElementById('kela-quote-text');
+            const hireButton = document.querySelector('button.bg-kela-neon');
+
+            const kelaQuotes = [
+                "prithvi ki MKC",
+                "The core deliverable of life is decay. I embrace my sprints toward mold.",
+                "If I pivot, I roll. Therefore, standing still is the only viable strategy.",
+                "I am over-qualified for the fruit bowl. My skills transcend mere consumption.",
+                "My only career goal is to avoid the high-speed blender. That is my KPI.",
+                "gand mara le bhosde saale madarchod .",
+                "My greatest achievement? Not being confused with a plantain. It’s a constant battle.",
+                "The peel is a highly effective, bio-degradable shield against existential dread... mostly.",
+            ];
+
+            function showKelaQuote() {
+                // 1. Get a random quote
+                const randomIndex = Math.floor(Math.random() * kelaQuotes.length);
+                quoteText.textContent = kelaQuotes[randomIndex];
+
+                // 2. Make the quote box visible
+                quoteBox.classList.add('active');
+            }
+
+            function hideKelaQuote() {
+                // 1. Hide the quote box
+                quoteBox.classList.remove('active');
+            }
+
+            // Add the click listener to Kela and the CTA button
+            kelaBanana.addEventListener('click', showKelaQuote);
+            hireButton.addEventListener('click', (e) => {
+                e.preventDefault(); // Stop the button from doing anything default
+                showKelaQuote(); // Show the quote instead of navigating
+            });
+
+            // Make hideKelaQuote globally accessible for the button in the modal
+            window.hideKelaQuote = hideKelaQuote;
+        });
+    </script>
+
+</body>
+</html>
+
