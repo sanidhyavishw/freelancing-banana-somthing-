@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍌 All Bananas All The Time 🍌</title>
+
+    <style>
+        /* Banana Yellow Theme */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe135; /* Classic Banana Yellow */
+            color: #3d2c00; /* Dark brown/black for contrast */
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            padding: 20px;
+            border-bottom: 5px solid #ffaa00; /* Ripe Banana Orange */
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #8B4513; /* Banana Peel Brown */
+        }
+
+        main {
+            padding: 40px 20px;
+        }
+
+        /* The Grid of Bananas */
+        .banana-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .banana-item {
+            font-size: 8em; /* Making the bananas HUGE */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* A little peel-out effect on hover */
+        .banana-item:hover {
+            transform: rotate(15deg) scale(1.1);
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #ffaa00;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 10px;
+            border-top: 2px dashed #3d2c00;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to the Banana Zone 🍌</h1>
+    </header>
+
+    <main>
+        <p>This page is purely dedicated to the finest fruit: the **banana**.</p>
+        <div class="banana-grid">
+            <span class="banana-item">🍌</span>
+            <span class="banana-item">🍌</span>
+            <span class="banana-item">🍌</span>
+            <span class="banana-item">🍌</span>
+            <span class="banana-item">🍌</span>
+            <span class="banana-item">🍌</span>
+            <span class="banana-item">🍌</span>
+            <span class="banana-item">🍌</span>
+            <span class="banana-item">🍌</span>
+        </div>
+        <h2>Click anywhere to peel the truth!</h2>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Banana Enterprises. Potassium not included.</p>
+    </footer>
+
+    <script>
+        // Function to handle the click event for the whole body
+        function bananaClick() {
+            alert("You've found the secret potassium! 🍌 Peel good about yourself!");
+        }
+
+        // Add the click listener to the entire document body
+        document.body.addEventListener('click', bananaClick);
+
+        // You could also target just the banana items for a specific effect:
+        const bananaItems = document.querySelectorAll('.banana-item');
+
+        bananaItems.forEach(banana => {
+            banana.addEventListener('click', (event) => {
+                // Stop the body click event from firing when a specific banana is clicked
+                event.stopPropagation();
+                console.log("A specific banana was clicked!");
+                // Change the color briefly to show it was clicked
+                banana.style.color = 'green';
+                setTimeout(() => {
+                    banana.style.color = 'inherit'; // Reset color
+                }, 300);
+            });
+        });
+    </script>
+
+</body>
+</html>
